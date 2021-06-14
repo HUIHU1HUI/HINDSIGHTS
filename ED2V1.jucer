@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="BO7ePZ" name="ED2V1" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              companyName="Elastic! Dummy!" companyWebsite="h-ui.xyz" pluginFormats="buildAU,buildVST3"
+              pluginAUMainType="'aumf'" pluginVST3Category="Delay,Fx" pluginName="HINDSIGHTS"
+              pluginDesc="Loop Resampler // Delay" pluginManufacturer="Elastic! Dummy!"
+              version="0.1" splashScreenColour="Light">
+  <MAINGROUP id="RHTt9V" name="ED2V1">
+    <GROUP id="{23716B0E-5B3E-B2AB-91EB-666F48116CD0}" name="UIAssets">
+      <FILE id="MOO6qv" name="greyKnob1.png" compile="0" resource="1" file="Source/UIAssets/greyKnob1.png"/>
+      <FILE id="rx5v9B" name="background.png" compile="0" resource="1" file="Source/UIAssets/background.png"/>
+    </GROUP>
+    <GROUP id="{3F3D04F5-A9D2-9A8C-8D04-E4E4B36A71AE}" name="Source">
+      <FILE id="zCSD3i" name="EDOVRDrivr.h" compile="0" resource="0" file="Source/EDOVRDrivr.h"/>
+      <FILE id="QhCfJ9" name="EDDelay.cpp" compile="1" resource="0" file="Source/EDDelay.cpp"/>
+      <FILE id="P37Ljy" name="EDDelay.h" compile="0" resource="0" file="Source/EDDelay.h"/>
+      <FILE id="kdlUq3" name="EDTimer.h" compile="0" resource="0" file="Source/EDTimer.h"/>
+      <FILE id="HBDcnX" name="EDLookAndFeel.cpp" compile="1" resource="0"
+            file="Source/EDLookAndFeel.cpp"/>
+      <FILE id="JcBzjq" name="EDLookAndFeel.h" compile="0" resource="0" file="Source/EDLookAndFeel.h"/>
+      <FILE id="dEfyBA" name="reSampler.cpp" compile="1" resource="0" file="Source/reSampler.cpp"/>
+      <FILE id="SPU3vJ" name="reSampler.h" compile="0" resource="0" file="Source/reSampler.h"/>
+      <FILE id="Xa6nH7" name="EDBuffer.cpp" compile="1" resource="0" file="Source/EDBuffer.cpp"/>
+      <FILE id="MR6WKL" name="EDBuffer.h" compile="0" resource="0" file="Source/EDBuffer.h"/>
+      <FILE id="mqZUl3" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="l1EpNN" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="RSH0LJ" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="xuI92i" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="ED2V1"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="ED2V1"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../../Applications/JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <OSX/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
