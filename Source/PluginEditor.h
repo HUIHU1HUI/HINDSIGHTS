@@ -101,5 +101,11 @@ private:
     juce::Slider DryWetSlider;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> DryWetSliderAttachment;
     
+    /* Level Metering */
+    foleys::LevelMeterLookAndFeel ff_lnf;
+    foleys::LevelMeter ff_meter { foleys::LevelMeter::Minimal };
+    
+    
+    
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ED2V1AudioProcessorEditor)
 };

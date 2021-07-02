@@ -63,9 +63,19 @@ public:
     juce::AudioProcessorValueTreeState apvts;
     
     
+    
+    foleys::LevelMeterSource& getMeterSource()
+    {
+        return ff_meterSource;
+    }
+    
+    
 private:
     
     float dryAmount, wetAmount;
+    
+    foleys::LevelMeterSource ff_meterSource;
+    
     
     
     juce::AudioProcessorValueTreeState::ParameterLayout createParameters();

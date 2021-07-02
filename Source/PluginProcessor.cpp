@@ -94,6 +94,7 @@ void ED2V1AudioProcessor::changeProgramName (int index, const juce::String& newN
 }
 
 //==============================================================================
+
 void ED2V1AudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     
@@ -105,6 +106,9 @@ void ED2V1AudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
     
     Delay[0].initialise(sampleRate);
     Delay[1].initialise(sampleRate);
+    
+    ff_meterSource.resize(getTotalNumInputChannels(), sampleRate * 0.1 / samplesPerBlock);
+    
     
 }
 
@@ -171,6 +175,9 @@ void ED2V1AudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::
             
         }
     }
+    
+    ff_meterSource.measureBlock(buffer);
+    
 }
 
 void ED2V1AudioProcessor::updateParameters()

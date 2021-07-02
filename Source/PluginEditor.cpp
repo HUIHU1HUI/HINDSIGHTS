@@ -20,6 +20,24 @@ ED2V1AudioProcessorEditor::ED2V1AudioProcessorEditor (ED2V1AudioProcessor& p)
     background = juce::ImageCache::getFromMemory(BinaryData::background_png, BinaryData::background_pngSize);
     
     
+    ff_lnf.setColour(foleys::LevelMeter::lmMeterGradientLowColour, juce::Colours::grey);
+    ff_lnf.setColour(foleys::LevelMeter::lmMeterGradientMidColour, juce::Colours::grey);
+    ff_lnf.setColour(foleys::LevelMeter::lmMeterGradientMidColour, juce::Colours::ghostwhite);
+    ff_lnf.setColour(foleys::LevelMeter::lmBackgroundColour, juce::Colours::transparentWhite);
+    ff_lnf.setColour(foleys::LevelMeter::lmOutlineColour, juce::Colours::transparentWhite);
+    ff_lnf.setColour(foleys::LevelMeter::lmMeterOutlineColour, juce::Colours::transparentWhite);
+    ff_lnf.setColour(foleys::LevelMeter::lmMeterBackgroundColour, juce::Colours::transparentWhite);
+    ff_lnf.setColour(foleys::LevelMeter::lmTicksColour, juce::Colours::transparentWhite);
+    ff_lnf.setColour(foleys::LevelMeter::lmMeterGradientMaxColour, juce::Colours::grey);
+    ff_lnf.setColour(foleys::LevelMeter::lmMeterMaxNormalColour, juce::Colours::transparentWhite);
+    ff_lnf.setColour(foleys::LevelMeter::lmMeterMaxWarnColour, juce::Colours::transparentWhite);
+    ff_lnf.setColour(foleys::LevelMeter::lmMeterMaxOverColour, juce::Colours::transparentWhite);
+    ff_lnf.setColour(foleys::LevelMeter::lmBackgroundClipColour, juce::Colours::transparentWhite);
+
+    ff_meter.setLookAndFeel(&ff_lnf);
+    ff_meter.setMeterSource(&audioProcessor.getMeterSource());
+    addAndMakeVisible(ff_meter);
+    
     lowResBuffer.setSize(2, 100);
     
     /* Buffer 1 */
@@ -128,6 +146,7 @@ ED2V1AudioProcessorEditor::ED2V1AudioProcessorEditor (ED2V1AudioProcessor& p)
 ED2V1AudioProcessorEditor::~ED2V1AudioProcessorEditor()
 {
     juce::HighResolutionTimer::stopTimer();
+    ff_meter.setLookAndFeel(nullptr);
 }
 
 //==============================================================================
@@ -139,6 +158,9 @@ void ED2V1AudioProcessorEditor::paint (juce::Graphics& g)
     g.setColour (juce::Colours::white);
     g.drawImage(background, 0, 0, 500, 600, 0, 0, 500, 600);
     g.setFont (15.0f);
+    
+    
+    
 }
 
 void ED2V1AudioProcessorEditor::hiResTimerCallback()
@@ -167,4 +189,8 @@ void ED2V1AudioProcessorEditor::resized()
     DelayGainSlider.setBounds(87, 400, mainKnobDiam, mainKnobDiam);
     
     DryWetSlider.setBounds(87, 495, mainKnobDiam, mainKnobDiam);
+    
+    ff_meter.setBounds((getWidth() / 2) - 20, 392, 40, 170);
+    
+    
 }
