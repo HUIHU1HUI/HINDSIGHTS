@@ -1,6 +1,6 @@
 # HINDSIGHTS
 
-Loop resampler // Delay
+Experimental Loop Resampler // Delay
 
 WIP
 
